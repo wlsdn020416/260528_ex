@@ -6,6 +6,27 @@
     <title>Event listener</title>
 </head>
 <body>
-    
+    <h1>Event 연결법</h1>
+    <button id="btn1" onclick="console.log('버튼1입니다')">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+    <script>
+        const btn2 = document.querySelector("#btn2");
+        btn2.onclick = function (){
+            console.log("버튼2 입니다");
+        }
+        const btn3 = document.querySelector("#btn3");
+        btn3.addEventListener("click", () => {
+            console.log("버튼3 입니다");
+        });
+        btn3.addEventListener("click", () => {
+            console.log("잘 누르셨어요");
+        });
+        //지울 때는 함수의 정보가 필요 -> 함수표현식 등에 쓰디는 익명함수는 지울 수 없음
+        const f = () => {
+            console.log("저는 지울 수 있어요");
+            btn3.removeEventListener("click", f);
+        }
+    </script>
 </body>
 </html>
