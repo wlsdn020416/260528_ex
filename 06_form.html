@@ -12,6 +12,13 @@
         <label> 비밀번호 : 
             <input id="password" type="password">
         </label>
+        <label>
+            <div>
+                <input name="poketmon" type="radio" value="꼬북이" checked>꼬북이
+                <input name="poketmon" type="radio" value="파이리">파이리
+                <input name="poketmon" type="radio" value="이상해씨">이상해씨
+            </div>
+        </label>
         <button>제출</button>
         <br>
         <a href="http://google.com" id = "link">링크</a>
@@ -23,10 +30,12 @@
         })
         
         const form = document.querySelector("#joinForm");
+        //click이 아니라 submit
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             console.log(event.target.username.value);
             console.log(event.target.password.value);
+            console.log(event.target.poketmon.value);
             console.log("제출되었습니다");
             const formData = new FormData(event.target);
             console.log(formData.get("username"));
