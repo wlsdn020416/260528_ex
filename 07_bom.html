@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <script>
+        console.log(this);
+        //현재 스코프 범위를 감싸고 있는 객체
+        console.log(globalThis); //명시적 전역 객체
+        function f1(){
+            console.log("f1", this);
+        }
+        const f2 = function (){
+            console.log("f2", this);
+        }
+        const f3 = () => {
+            console.log("f3", this);
+        }
+        f1();
+        f2();
+        f3();
+        setTimeout(
+            () => console.log("setTimeOut"),
+            1000
+        );
+        // setInterval(() => console.log("setInterval"),1000); -> 반복
+    </script>
+</body>
+</html>
