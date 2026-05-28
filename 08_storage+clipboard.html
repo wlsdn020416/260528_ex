@@ -6,6 +6,40 @@
     <title>storage + clipboard</title>
 </head>
 <body>
-    
+    <button id ="copy">복사</button>
+    <script>
+        // localStorage, sessionStorage
+        //출처 & 특정 탭에 종속이 된다
+        let a= sessionStorage.getItem("counter")??0;
+        a++;
+        console.log("session",a);
+        console.log(sessionStorage.setItem("counter",a));
+        //출처만 같다면 영속
+        let b= localStorage.getItem("counter")??0;
+        b++;
+        console.log("local",b);
+        console.log(localStorage.setItem("counter",b));
+        window.addEventListener("storage",() => {
+            console.log("스토리지 변동");
+        });
+        //key 값은 문자열(String)만 가능함
+
+        const o ={
+            name : "jinwoo",
+            job : "back-end"
+        }
+        localStorage.setItem("o",o);
+        localStorage.setItem("o2",JSON.stringify(o));
+        console.log(JSON.parse(localStorage.getItem("o2")));
+
+        document.querySelector("#copy")
+        .addEventListener("click", () =>{
+            //복사된 데이터가 존재하는 임시 메모리 공간
+            console.log("부자가 되는 방법이 복사가 되었습니다");
+            navigator.clipboard.writeText("부자가 되는 방법");
+            
+        });
+
+    </script>
 </body>
 </html>
