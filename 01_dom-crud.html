@@ -6,6 +6,23 @@
     <title>DOM CRUD</title>
 </head>
 <body>
-    
+    <!-- DOM 조회 -->
+     <div>
+        <h1>Dom 조회</h1>
+        <p class = "job">전사</p>
+        <p id = "acher" class = "job">궁수</p>
+        <p class = "job">마법사</p>
+        <p>모험가</p>
+     </div>
+     <script>
+        const p1 = document.querySelector("p"); // 처음 나온 태그
+        console.log(p1);
+        const p2 = document.querySelectorAll("p"); // 태그 전체
+        console.log(...p2 );
+        const p3 = document.querySelector("#acher"); // 선택
+        console.log(p3);
+        const p4 = document.querySelectorAll(".job");
+        console.log(p4);
+     </script>
 </body>
 </html>
