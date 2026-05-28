@@ -6,6 +6,33 @@
     <title>form</title>
 </head>
 <body>
-    
+    <form id="joinForm" style="display: flex;flex-direction: column;gap: 8px;">
+        <label> 유저네임 :
+            <input id = "username" name = "username" type="text"></label>
+        <label> 비밀번호 : 
+            <input id="password" type="password">
+        </label>
+        <button>제출</button>
+        <br>
+        <a href="http://google.com" id = "link">링크</a>
+    </form>
+    <script>
+        document.querySelector("#link").addEventListener("click",(event) => {
+            console.log("못지나가요");
+            event.preventDefault();
+        })
+        
+        const form = document.querySelector("#joinForm");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            console.log(event.target.username.value);
+            console.log(event.target.password.value);
+            console.log("제출되었습니다");
+            const formData = new FormData(event.target);
+            console.log(formData.get("username"));
+            console.log(...formData); // 객체화
+            console.log(Object.fromEntries(formData));
+        });
+    </script>
 </body>
 </html>
