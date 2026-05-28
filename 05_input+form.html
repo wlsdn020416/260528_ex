@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input + form</title>
+</head>
+<body>
+    <form id="myForm" style="padding: 24px">
+        <label for=formName>이름 : </label>
+        <input type="text" id ="formName">
+        <br>
+        <label for="formPassword">패스워드 : </label>
+        <input type="password" id = "formPassword">
+    </form>
+    <button id="inputBtn">input test</button>
+    <script>
+        const nameInput = document.querySelector("#formName");
+        const inputBtn = document.querySelector("#inputBtn");
+        const passwordInput = document.querySelector("#formPassword");
+        inputBtn.addEventListener("click", (event) => {
+            console.log(nameInput.value);
+            console.log(passwordInput.value);
+        });
+        
+    </script>
+</body>
+</html>
