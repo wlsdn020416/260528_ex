@@ -6,6 +6,7 @@
     <title>BOM</title>
 </head>
 <body>
+    <div style = "background-color: aquamarine; height: 1000vh"></div>
     <script>
         console.log(this);
         //현재 스코프 범위를 감싸고 있는 객체
@@ -26,7 +27,24 @@
             () => console.log("setTimeOut"),
             1000
         );
-        // setInterval(() => console.log("setInterval"),1000); -> 반복
+        // setInterval(() => {
+        //     console.log("setInterval"),
+        //     1000
+        // }); 
+        //window
+        //순수하게 보여지는 곳
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        //전체
+        console.log(window.outerWidth);
+        console.log(window.outerHeight);
+        //scroll 관련도 있음
+        console.log(window.scrollX);
+        console.log(window.scrollY);
+        
+        
+
+
     </script>
 </body>
 </html>
