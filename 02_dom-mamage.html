@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM CRUD</title>
+    <style>
+        .switch{
+            background-color: greenyellow;
+        }
+        .border {
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -21,6 +29,28 @@
             const box = document.createElement("p");
             // box.innerHTML = `<button onclick="alert('해킹 당했습니다!')">부자가 되는 법, 꼭 확인하세요!</button>`;
             box.textContent = content; // 랜더링 상관없이 바로 집어넣는 기능
+            box.title = "title"; // 속성
+            box["id"] = "myid";
+            //변수 명으로 쓸 수 있는 이름을 가지고 있다면 프로퍼티처럼 호출 가능
+            box.className = "switch border";
+            box.classList.add("switch");
+            box.classList.add("border");
+            //add : 추가
+            //remove : 제거
+            //contains : 확인
+            //toggle : on/off
+
+            //HTML 속성 -> . [] 
+            //CSS class -> className, classList
+            //CSS 속성 -> style을 객체처럼 사용
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent= "삭제";
+            box.append(deleteButton);
+            deleteButton.addEventListener("click", () => {
+                box.remove();
+            });
+
             container.append(box);
         }
     </script>
